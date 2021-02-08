@@ -5,6 +5,11 @@
     margin: 12px;
     text-align: center;
     background-color: #F7F9FD;
+    max-width: 310px;
+}
+
+.displayFood img {
+    width: 200px;
 }
 
 .food-name {

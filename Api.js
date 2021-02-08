@@ -1,6 +1,3 @@
-const search = document.getElementById('search');
-const submit = document.getElementById('submit');
-
 fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
     .then(res => res.json())
     .then(data => {
@@ -13,16 +10,24 @@ const displayFoods = foods => {
         displayFoodDiv.className = 'displayFood';
         const displayFood =
             `
-        <div style="cursor:pointer" onclick="displayFoodsDetail('${food.strCategory}')">
+        <div style="cursor:pointer"onclick="displayFoodsDetail('${food.strCategory}')">
         <img src ="${food.strCategoryThumb}">
         <h3 class ="food-name">${food.strCategory}</h3>
-        <p>
+        
         </div>
         `;
         displayFoodDiv.innerHTML = displayFood;
         displayFoodsDiv.appendChild(displayFoodDiv);
     });
 }
+function searchValue() {
+    const search = document.getElementById("search");
+    const foodName = search.value;
+    displayFoodsDetail(foodName);
+    //  console.log(foodName);
+    search.value = "";
+}
+
 const displayFoodsDetail = name => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
     fetch(url)
