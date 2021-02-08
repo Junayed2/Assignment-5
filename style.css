@@ -5,8 +5,7 @@
     margin: 12px;
     text-align: center;
     background-color: #F7F9FD;
-    /* max-width: 310px; */
-    width: 310px;
+    max-width: 310px;
 }
 
 .displayFood img {
